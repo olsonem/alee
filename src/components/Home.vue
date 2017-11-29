@@ -7,9 +7,7 @@
     <ul class="cities" v-if="results && results.list.length > 0">
       <li v-for="city in results.list">
         <h2>{{ city.name }}, {{ city.sys.country }}</h2>
-        <p><router-link v-bind:to="{ name: 'CurrentWeather', params: { cityId: city.id } }">View Current Weather</router-link></p>
-        <weather-summary v-bind:weatherData="city.weather"></weather-summary>
-        <weather-data v-bind:weatherData="city.main"></weather-data>
+        <p><router-link v-bind:to="{ name: 'CurrentWeather', params: { cityID: city.id } }">View Current Weather</router-link></p>
       </li>
     </ul>
   </div>

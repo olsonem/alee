@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
+import CurrentWeather from '@/components/CurrentWeather'
 
 
 
@@ -13,6 +14,11 @@ export default new Router({
       name: 'Home',
       component: Home
     },
+    {
+      path: '/current/:cityID',
+      name: 'CurrentWeather',
+      component: CurrentWeather
+    }
 
   ]
 })
