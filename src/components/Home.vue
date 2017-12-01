@@ -2,12 +2,12 @@
   <div>
     <h2>Set Local City</h2>
     <form v-on:submit.prevent="getCities">
-        <p>Enter city name: <input type="text" v-model="query" placeholder="Paris, TX"> <button type="submit">Go</button></p>
+        <p>Enter city name: <input type="text" v-model="query" placeholder="Three Lakes"> <button type="submit">Go</button></p>
     </form>
     <ul class="cities" v-if="results && results.list.length > 0">
       <li v-for="city in results.list">
         <h2>{{ city.name }}, {{ city.sys.country }}</h2>
-        <p><router-link v-bind:to="{ name: 'CurrentWeather', params: { cityID: city.id } }">View Current Weather</router-link></p>
+        <p><router-link v-bind:to="{ name: 'CurrentWeather', params: { cityID: city.id } }"> Get Coat </router-link></router-link></p>
       </li>
     </ul>
   </div>

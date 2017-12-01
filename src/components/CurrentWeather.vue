@@ -6,7 +6,7 @@
 
     </p>
     <div v-if="weatherData">
-        <img v-bind:src="'./assets/' + coat">
+        <img v-bind:src="'../static/' + coat">
 
     </div>
 
@@ -40,6 +40,7 @@ export default {
       API.get('weather', {
         params: {
             id: this.$route.params.cityID
+
         }
       })
       .then(response => {
