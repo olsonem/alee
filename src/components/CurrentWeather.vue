@@ -28,8 +28,13 @@ export default {
   },
   methods: {
       getCoat: function(){
+          if (weatherData.main.rain < 1) && (weatherData.main.temp >38 & < 75)
           this.coat="raincoat.jpg";
-      }
+          else if (weatherData.main.rain === 0) && (weatherData.mail.temp)
+          this.coat="sweater.jpg";
+          }
+         
+      
   },
   created () {
     this.showLoading = true;
