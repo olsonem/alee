@@ -28,19 +28,19 @@ export default {
   },
   methods: {
       getCoat: function(){
-          if ((weatherData.main.temp >= -30) && (weatherData.main.temp <= 30 ) && (weatherData.main.snow > 1)) {
+          if ((this.weatherData.main.temp >= -30) && (this.weatherData.main.temp <= 30 ) && (this.weatherData.main.snow.3h > 1)) {
             this.coat="skisuit.jpg" ;
           } 
-          else if ((weatherData.main.temp >= 0) && (weatherData.main.temp <= 45) && (weatherData.main.snow > 1)) {
+          else if ((this.weatherData.main.temp >= 0) && (this.weatherData.main.temp <= 45) && (this.weatherData.main.snow.3h > 1)) {
             this.coat="parka.jpg";
           }
-          else if ((weatherData.main.temp >= 45) && (weatherData.main.temp <= 65) && (weatherData.main.snow = 0)) {
+          else if ((this.weatherData.main.temp >= 45) && (this.weatherData.main.temp <= 65) && (this.weatherData.main.snow.3h = 0)) {
             this.coat="trench.jpg"
           } 
-          else if ((weatherData.main.temp >= 38) && (weatherData.main.temp < 75) && (weatherData.main.rain > 1)) {
+          else if ((this.weatherData.main.temp >= 38) && (this.weatherData.main.temp < 75) && (this.weatherData.main.rain.3h > .05)) {
             this.coat="raincoat.jpg"
           }
-          else if ((weatherData.main.temp >= 45) && (weatherData.main.temp < 70) && (weatherData.main.rain > 0)) {
+          else if ((this.weatherData.main.temp >= 45) && (this.weatherData.main.temp < 70) && (this.weatherData.main.rain.3h > 0)) {
             this.coat="sweater.jpg"
           }
           else 
