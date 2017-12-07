@@ -31,19 +31,19 @@ export default {
   },
   methods: {
       getAccessory: function(){
-          if  ((this.weatherData.weather[0].main === 'Clear')) {
+          if  (this.weatherData.weather[0].main === 'Clear') {
             this.accessory="sunglasses.jpg" ;
           } 
-          else if ((this.weatherData.main.temp <= 30)) {
+          else if (this.weatherData.main.temp <= 30) {
             this.accessory="hat.jpg";
           }
-          else if ((this.weatherData.weather[0].main === 'Rain')) {
+          else if (this.weatherData.weather[0].main === 'Rain') {
             this.accessory="umbrella.jpg"
           } 
-          else if ((this.weatherData.weather[0].main === 'Snow')) {
+          else if (this.weatherData.weather[0].main === 'Snow') {
             this.accessory="scarf.jpg"
           }
-          else if ((this.weatherData.main.temp <= 45)) {
+          else if (this.weatherData.main.temp <= 45) {
             this.accessory="mitten.jpg"
           }
           else 

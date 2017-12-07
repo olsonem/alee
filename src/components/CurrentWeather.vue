@@ -33,54 +33,45 @@ export default {
       getCoat: function(){
           if (
             (this.weatherData.main.temp >= -30) && 
-            (this.weatherData.main.temp <= 15 )
+            (this.weatherData.main.temp <= 20 ) 
             ) {
             this.coat="skisuit.jpg" ;
           } 
           else if (
-            (this.weatherData.main.temp >= 0) && 
-            (this.weatherData.main.temp <= 45) && 
+            (this.weatherData.main.temp >= 21) && 
+            (this.weatherData.main.temp <= 50) && 
             (
-              (this.weatherData.weather[0].main === 'clear Sky') || 
-              (this.weatherData.weather[0].main === 'few Clouds') || 
-              (this.weatherData.weather[0].main === 'scattered Clouds') ||
-              (this.weatherData.weather[0].main === 'broken Clouds') ||
-              (this.weatherData.weather[0].main === 'snow')
+              (this.weatherData.weather[0].main !== 'Rain') || 
+              (this.weatherData.weather[0].main !== 'Thunderstorm') ||
+              (this.weatherData.weather[0].main !== 'Drizzle') 
             )
           ) {
             this.coat="parka.jpg";
           }
           else if (
-            (this.weatherData.main.temp >= 45) && 
-            (this.weatherData.main.temp <= 60) && 
+            (this.weatherData.main.temp >= 21 ) && 
+            (this.weatherData.main.temp <= 50) && 
             (
-              (this.weatherData.weather[0].main === 'mist') ||
-              (this.weatherData.weather[0].main === 'Clear Sky')
-              ) 
-          ){
-            this.coat="trench.jpg"
-          } 
-          else if (
-            (this.weatherData.main.temp >= 38) && 
-            (this.weatherData.main.temp < 75) && 
-            (
-              (this.weatherData.weather[0].main === 'rain') ||
-              (this.weatherData.weather[0].main === 'mist') ||
-              (this.weatherData.weather[0].main === 'shower rain')
+              (this.weatherData.weather[0].main === 'Rain') ||
+              (this.weatherData.weather[0].main === 'Thunderstorm') ||
+              (this.weatherData.weather[0].main === 'Drizzle') 
               )
            ) {
             this.coat="raincoat.jpg"
           }
+ 
           else if (
-            (this.weatherData.main.temp >=55) &&
-            (this.weatherData.main.temp <=60)
+            (this.weatherData.main.temp >= 51) &&
+            (this.weatherData.main.temp <= 70) &&
+            (this.weatherData.weather[0].main !== 'Clear')
           ) {
             this.coat="jacket.jpg"
           }
           else if (
-            (this.weatherData.main.temp >= 50) && 
+            (this.weatherData.main.temp >= 51) && 
             (this.weatherData.main.temp <= 70) && 
-            (this.weatherData.weather[0].main === 'clear Sky')) {
+            (this.weatherData.weather[0].main === 'Clear')
+            ) {
             this.coat="sweater.jpg"
           }
           else 
