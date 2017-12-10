@@ -21,10 +21,10 @@ You can then begin making calls to the API
 
 npm install -g vue-cli
 
-# initialize webpack and name your project (ex: project-name) 
+## initialize webpack and name your project (ex: project-name) 
 vue init webpack project-name
 
-# answer all of the following questions 
+## answer all of the following questions 
 Project name: project-name
 Project description: A Vue.js project
 Author: Your Name
@@ -34,23 +34,23 @@ Use ESLint to lint your code? No
 Setup unit test with Karma + Mocha? No
 Setup e2e tests with Nightwatch? No
 
-# changes directories to the new folder and install dependencies
+## changes directories to the new folder and install dependencies
 cd project-name
 npm install
 
-# how to run the local development server
+## how to run the local development server
 npm run dev
 
-# install the following:
-# Axios (API calls)
+## install the following:
+## Axios (API calls)
 npm install --save axios
 
 
-# be sure to use debugging tools (like the Sources tab in the Chrome development tools) to test and debug your code in the local environment
+## be sure to use debugging tools (like the Sources tab in the Chrome development tools) to test and debug your code in the local environment
 installing the [Vue.js Dev Tool](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en) can be very helpful.
 
-# how to build the code for deployment on Github
-# configure webpack to build code into /docs folder instead of default /dist folder
+## how to build the code for deployment on Github
+## configure webpack to build code into /docs folder instead of default /dist folder
 open config/index.js in your code editor
 change all instances of dist to docs
 change the path from root ('/') to none ('')
@@ -66,7 +66,7 @@ build: {
 
 save changes
 
-# run the build command to create the docs folder
+## run the build command to create the docs folder
 npm run build
 
 
