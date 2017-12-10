@@ -21,7 +21,7 @@ export default new Router({
       component: CurrentWeather
     },
     {
-      path: '/current/:cityID',
+      path: '/current/:cityID/accessories',
       name: 'Accessories', 
       component: Accessories
     }

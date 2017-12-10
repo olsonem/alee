@@ -5,6 +5,7 @@
       <router-link to="/">Home</router-link> 
 
     </p>
+    <load-spinner v-if="showLoading"></load-spinner>
     <div v-if="weatherData">
         <img v-bind:src="'../static/' + coat">
 
@@ -12,12 +13,16 @@
     <div>  
         <router-link v-bind:to="{ name: 'Accessories', params: { cityID: $route.params.cityID } }">View Suggested Accessories? </router-link>
     </div>
+    
+
 
   </div>
 </template>
 
 <script>
 import {API} from '@/common/api';
+import ErrorList from "@/components/ErrorList";
+import CubeSpinner from '@/components/CubeSpinner';
 
 export default {
   name: 'Coat',
@@ -25,6 +30,7 @@ export default {
   data () {
     return {
       weatherData: null,
+      errors: [],
       coat: ""
 
     }
@@ -49,12 +55,13 @@ export default {
             this.coat="parka.jpg";
           }
           else if (
-            (this.weatherData.main.temp >= 21 ) && 
-            (this.weatherData.main.temp <= 50) && 
+            (this.weatherData.main.temp >= 50 ) && 
+            (this.weatherData.main.temp <= 75) && 
             (
               (this.weatherData.weather[0].main === 'Rain') ||
               (this.weatherData.weather[0].main === 'Thunderstorm') ||
-              (this.weatherData.weather[0].main === 'Drizzle') 
+              (this.weatherData.weather[0].main === 'Drizzle') ||
+              (this.weatherData.weather[0].main === 'Mist')
               )
            ) {
             this.coat="raincoat.jpg"
@@ -97,6 +104,10 @@ export default {
       .catch(error => {
         this.showLoading = false;
       });
+  },
+  components: {
+    'error-list': ErrorList,
+    'load-spinner': CubeSpinner
   }
 }
 </script>

@@ -3,10 +3,9 @@
     <h2>Current Weather <span v-if="weatherData"> for {{ weatherData.name }}, {{weatherData.sys.country }}</span></h2>
     <p>
       <router-link to="/">Home</router-link> 
-    
-
 
     </p>
+
     <div v-if="weatherData">
         <img v-bind:src="'../static/' + accessory">
 
@@ -18,6 +17,9 @@
 
 <script>
 import {API} from '@/common/api';
+import ErrorList from "@/components/ErrorList";
+import CubeSpinner from '@/components/CubeSpinner';
+
 
 export default {
   name: 'Acccessories',
@@ -69,7 +71,12 @@ export default {
       .catch(error => {
         this.showLoading = false;
       });
-  }
+  },
+  components: {
+    'error-list': ErrorList,    
+    'load-spinner': CubeSpinner
+
+  }  
 }
 </script>
 
