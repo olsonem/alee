@@ -7,7 +7,7 @@
     </p>
     <load-spinner v-if="showLoading"></load-spinner>
     <div v-if="weatherData">
-        <img v-bind:src="'../static/' + coat">
+        <v-bind:src="'static/' + coat">
 
     </div>
     <div>  
