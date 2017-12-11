@@ -7,7 +7,7 @@
     </p>
 
     <div v-if="weatherData">
-        <v-bind:src="'static/' + accessory">
+        <img v-bind:src="'static/' + accessory">
 
     </div>
 
